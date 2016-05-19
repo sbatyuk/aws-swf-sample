@@ -28,16 +28,16 @@ public class TravelServiceImpl implements TravelService {
       // ignore
     }
 
-    checkFileExists();
+    checkErrorFile();
 
     System.out.println("Booked train tickets for " + name + '\n');
     return 3;
   }
 
-  private void checkFileExists() {
-    File file = new File(System.getProperty("user.home"), "demo/swf");
-    if (!file.exists()) {
-      throw new RuntimeException("File does not exist!");
+  private void checkErrorFile() {
+    File file = new File(System.getProperty("user.home"), "swf/error");
+    if (file.exists()) {
+      throw new RuntimeException("We've got an error!");
     }
   }
 
