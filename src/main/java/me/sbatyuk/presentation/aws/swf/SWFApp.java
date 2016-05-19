@@ -4,6 +4,7 @@ import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflowClient;
+import me.sbatyuk.presentation.aws.swf.service.VisitOrganizerServiceClientExternalFactory;
 import me.sbatyuk.presentation.aws.swf.service.VisitOrganizerServiceClientExternalFactoryImpl;
 
 public class SWFApp {
@@ -13,7 +14,7 @@ public class SWFApp {
         new AmazonSimpleWorkflowClient(new ProfileCredentialsProvider("JEEConf"));
     swfClient.setRegion(Region.getRegion(Regions.EU_CENTRAL_1));
 
-    VisitOrganizerServiceClientExternalFactoryImpl clientFactory =
+    VisitOrganizerServiceClientExternalFactory clientFactory =
         new VisitOrganizerServiceClientExternalFactoryImpl(swfClient, "JEEConf");
 
     clientFactory.getClient().prepareForJEEConf("Serhiy", "serhiy@lohika.com");
