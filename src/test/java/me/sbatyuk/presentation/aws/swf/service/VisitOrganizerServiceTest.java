@@ -19,7 +19,7 @@ public class VisitOrganizerServiceTest {
   @Rule
   public WorkflowTest workflowTest = new WorkflowTest();
 
-  List<String> trace = new ArrayList<>();
+  private List<String> trace = new ArrayList<>();
 
   private VisitOrganizerServiceClientFactory factory = new
       VisitOrganizerServiceClientFactoryImpl();
