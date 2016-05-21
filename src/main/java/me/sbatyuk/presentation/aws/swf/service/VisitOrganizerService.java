@@ -5,7 +5,8 @@ import com.amazonaws.services.simpleworkflow.flow.annotations.Workflow;
 import com.amazonaws.services.simpleworkflow.flow.annotations.WorkflowRegistrationOptions;
 
 @Workflow
-@WorkflowRegistrationOptions(defaultExecutionStartToCloseTimeoutSeconds = 60)
+@WorkflowRegistrationOptions(
+    defaultExecutionStartToCloseTimeoutSeconds = 60)
 public interface VisitOrganizerService {
 
   @Execute(version = "1.0")
